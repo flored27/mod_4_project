@@ -1,0 +1,39 @@
+body {
+    background: #ffffff url("../images/cocktail_background.jpg") no-repeat fixed;
+}
+
+
+
+
+
+#Left-List
+{
+  position:  fixed;
+  width: 30%;
+  height: 600px; /*I need to set the height to be dynamic*/
+ overflow: auto;
+ padding: 10px;
+
+
+
+}
+
+#Center-Detail
+{
+  width: 40%;
+  text-align: center;
+   width: 300px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+
+#Right-Form
+{
+
+    width: 30%;
+    float: right;
+    
+
+    /*padding: 1px;*/
+}
