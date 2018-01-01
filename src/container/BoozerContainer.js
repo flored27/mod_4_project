@@ -25,7 +25,7 @@ class BoozerContainer extends React.Component {
   // proportions: [{
   //   ingredient_name: cocktail.proportions.ingredient_name,
   //   amount: cocktail.proportions.amount
-renderNewList=()=>{
+renderNewList=(cocktail)=>{
   console.log("Hello")
     fetch('http://localhost:3000/api/v1/cocktails/', {
       method: 'POST',
@@ -33,18 +33,7 @@ renderNewList=()=>{
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        cocktail: {
-          name: "COCKTAIL TEST6",
-          description: "DESCRIPTION TEST",
-          instructions: "INSTRUCTION TEST"},
-        proportion: {
-          amount: "AMOUNT TEST6",
-          cocktail_id: 1,
-          ingredient_id: 1},
-        ingredient: {
-          name: "TEST6"}
-        })
+      body: JSON.stringify(cocktail)
     })
     .then(data=>data.json())
     .then(cocktail=>{
