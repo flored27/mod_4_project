@@ -101,11 +101,11 @@ renderNewList=()=>{
   }
 
   render () {
-      // <ListContainer cocktails={this.state.cocktails} handleSelected={this.handleSelected}/>
     // const filteredCocktails = this.state.cocktails.filter(t => t.description.includes(this.state.searchTerm))
     return (
       <div className="Wrapper" id="wrap">
       <div id="Left-List">
+        <ListContainer cocktails={this.state.cocktails} handleSelected={this.handleSelected}/>
         <button onClick={this.renderNewList}>TEST</button>
       </div>
         <div id="Center-Detail">
