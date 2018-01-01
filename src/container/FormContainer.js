@@ -3,16 +3,19 @@ import Form from '../components/Form'
 
 class FormContainer extends React.Component {
   state = {
-    name: "",
-    description: "",
-    instructions: "",
-    proportions: [{
-      ingredient_name: "orange",
-      amount: 2
-    }],
+    cocktail: {
+      name: "",
+      description: "",
+      instructions: ""},
+    proportion: {
+      amount: "",
+      cocktail_id: 1,
+      ingredient_id: 1},
+    ingredient: {
+      name: ""}
   }
 
-handleSubmit = (event, props) => {
+handleSubmit = (event) => {
   event.preventDefault();
   this.props.renderNewList(this.state)
   this.setState({
