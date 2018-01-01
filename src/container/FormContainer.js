@@ -19,13 +19,16 @@ handleSubmit = (event) => {
   event.preventDefault();
   this.props.renderNewList(this.state)
   this.setState({
-    name: "",
-    description: "",
-    instructions: "",
-    proportions: [{
-      ingredient_name: "",
-      amount: ""
-    }],
+    cocktail: {
+      name: "",
+      description: "",
+      instructions: ""},
+    proportion: {
+      amount: "",
+      cocktail_id: 1,
+      ingredient_id: 1},
+    ingredient: {
+      name: ""}
   })
 }
 
