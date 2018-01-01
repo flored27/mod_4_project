@@ -9,7 +9,7 @@ const ListContainer = (props) => {
     props.handleSelected(c)
   }
 
-    const cocktails = props.cocktails.map(c => <li onClick={()=>{handleClick(c)}}> {c.name}</li>)
+    const cocktails = props.cocktails.map(c => <li key={c.id} onClick={()=>{handleClick(c)}}> {c.name}</li>)
 
 
   return (
