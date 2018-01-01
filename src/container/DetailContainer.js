@@ -7,7 +7,7 @@ const DetailContainer = (props) => {
     if (props.ingredients) {
       console.log(props.ingredients)
 
-      return props.ingredients.proportions.map(ingred => <li> {ingred.ingredient_name} ({ingred.amount})</li>)
+      return props.ingredients.proportions.map(ingred => <li key={ingred.id}> {ingred.ingredient_name} ({ingred.amount})</li>)
     }
   }
 
