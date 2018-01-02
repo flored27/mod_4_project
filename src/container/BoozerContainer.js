@@ -18,9 +18,7 @@ class BoozerContainer extends React.Component {
     fetch('http://localhost:3000/api/v1/cocktails/')
     .then(data => data.json())
     .then(data => this.setState({ cocktails: data.cocktail }));
-  }
 
-  componentDidMount() {
     fetch('http://localhost:3000/api/v1/cocktails/')
     .then(data => data.json())
     .then(data => this.setState({ ingredient_array: data.ingredient }));
