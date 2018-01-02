@@ -32,12 +32,12 @@ handleSubmit = (event) => {
   })
 }
 
-  handleChange = (event) => {
-
+  handleCocktailChange = (event) => {
     this.setState({
+      cocktail: {
       [event.target.name]: event.target.value,
+      } 
     })
-
     console.log(this.state)
   }
 
@@ -78,11 +78,11 @@ handleSubmit = (event) => {
     return (
       <div align="right" style={{padding:10 }} >
         <form onSubmit={this.handleSubmit}>
-          Name: <input name="name" value={this.state.cocktail.name} onChange={this.handleChange} type="text"></input>
+          Name: <input name="name" value={this.state.cocktail.name} onChange={this.handleCocktailChange} type="text"></input>
           <br />
-          Description: <textarea name="description" value={this.state.cocktail.description} onChange={this.handleChange} type="text"></textarea>
+          Description: <textarea name="description" value={this.state.cocktail.description} onChange={this.handleCocktailChange} type="text"></textarea>
           <br />
-          Instructions: <textarea name="instructions" value={this.state.cocktail.instructions} onChange={this.handleChange} type="text"></textarea>
+          Instructions: <textarea name="instructions" value={this.state.cocktail.instructions} onChange={this.handleCocktailChange} type="text"></textarea>
           <br />
           <h3>Proportions:</h3>
 
