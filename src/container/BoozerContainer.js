@@ -11,6 +11,7 @@ class BoozerContainer extends React.Component {
     selected: "",
     ingredients: "",
     proportions: [],
+    ingredient_array: [],
   }
 
   componentDidMount() {
@@ -18,6 +19,13 @@ class BoozerContainer extends React.Component {
     .then(data => data.json())
     .then(data => this.setState({ cocktails: data.cocktail }));
   }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/api/v1/cocktails/')
+    .then(data => data.json())
+    .then(data => this.setState({ ingredient_array: data.ingredient }));
+  }
+
 
   // name: cocktail.name,
   // description: cocktail.description,
@@ -101,7 +109,7 @@ renderNewList=(cocktail)=>{
           <DetailContainer selected={this.state.selected} ingredients={this.state.ingredients}/>
         </div>
         <div id="Right-Form">
-          <FormContainer renderNewList={this.renderNewList}/>
+          <FormContainer renderNewList={this.renderNewList} cocktailID={this.state.cocktails.length} ingredientID={this.state.ingredient_array.length}/>
         </div>
 
       </div>
