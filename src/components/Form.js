@@ -5,11 +5,11 @@ const Form = (props) => {
   return (
   <div align="right" style={{padding:10 }} >
     <form onSubmit={props.handleSubmit}>
-      Name: <input name="name" value={props.name} onChange={props.handleChange} type="text"></input>
+      Name: <input name="name" value={props.formState.cocktail.name} onChange={(event)=>{props.handleCocktailChange(event)}} type="text"></input>
       <br />
-      Description: <textarea name="description" value={props.description} onChange={props.handleChange} type="text"></textarea>
+      Description: <textarea name="description" value={props.formState.cocktail.description} onChange={(event)=>{props.handleCocktailChange(event)}} type="text"></textarea>
       <br />
-      Instructions: <textarea name="instructions" value={props.instructions} onChange={props.handleChange} type="text"></textarea>
+      Instructions: <textarea name="instructions" value={props.formState.cocktail.instructions} onChange={(event)=>{props.handleCocktailChange(event)}} type="text"></textarea>
       <br />
       <h3>Proportions:</h3>
 
