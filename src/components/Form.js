@@ -11,8 +11,6 @@ const Form = (props) => {
       <br />
       Instructions: <textarea name="instructions" value={props.instructions} onChange={props.handleChange} type="text"></textarea>
       <br />
-      Ingredients: <input name="ingredient_name" value={props.proportions.ingredient_name} onChange={props.handleIngredientName} type="text"></input> Quantity: <input name="amount" value={props.proportions.amount} onChange={props.handleAmount} type="text"></input>
-      <br />
       <h3>Proportions:</h3>
 
       <button type="submit">Submit</button>
