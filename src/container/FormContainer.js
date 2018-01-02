@@ -46,34 +46,46 @@ class FormContainer extends React.Component {
   }
 
   handleIngredientChange = (event) => {
-    const field = event.target.name
     const value = event.target.value
     this.setState(prevState=>{
       return {
         ingredient: {
           ...prevState.ingredient,
-        [field]: value
+        name: value
         }
       }
     })
   }
 
   handleProportionChange = (event) => {
-    const field = event.target.name
     const value = event.target.value
+    const orgCocktail = this.state.proportion.cocktail_id
+    const orgIngredient = this.state.proportion.ingredient_id
     this.setState(prevState=>{
       return {
         proportion: {
           ...prevState.proportion,
-        [field]: value
+        amount: value,
+        cocktail_id: 2,
+        ingredient_id: 2
         }
       }
     })
   }
 
+  // handleProportionId = () => {
+
+  //   if ()
+  //   this.setState({
+  //     ...this.state.proportion,
+  //
+  //   })
+  // }
+
   render()
 
   {
+    console.log(this.state)
     return (
         < Form handleSubmit={this.handleSubmit} handleCocktailChange={this.handleCocktailChange} handleIngredientChange={this.handleIngredientChange} handleProportionChange={this.handleProportionChange} formState={this.state}/>
   )}
