@@ -76,7 +76,19 @@ handleSubmit = (event) => {
   render()
   {
     return (
-        < Form handleSubmit={this.handleSubmit} handleIngredientName={this.handleIngredientName} handleAmount={this.handleAmount} name={this.state.name} description={this.state.description} instructions={this.state.instructions} proportions={this.state.proportions}/>
+      <div align="right" style={{padding:10 }} >
+        <form onSubmit={this.handleSubmit}>
+          Name: <input name="name" value={this.state.cocktail.name} onChange={this.handleChange} type="text"></input>
+          <br />
+          Description: <textarea name="description" value={this.state.cocktail.description} onChange={this.handleChange} type="text"></textarea>
+          <br />
+          Instructions: <textarea name="instructions" value={this.state.cocktail.instructions} onChange={this.handleChange} type="text"></textarea>
+          <br />
+          <h3>Proportions:</h3>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
   )}
 }
 
