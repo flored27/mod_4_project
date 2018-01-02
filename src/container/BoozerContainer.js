@@ -42,10 +42,11 @@ renderNewList=(cocktail)=>{
       body: JSON.stringify(cocktail)
     })
     .then(data=>data.json())
-    .then(cocktail=>{
+    .then(data=>{
       this.setState((prevState) => {
-        return {cocktails: [...prevState.cocktails, cocktail]};
+        return {cocktails: [...prevState.cocktails, data.cocktail[`${data.cocktail.length-1}`]]};
       });
+      console.log(this.state.cocktails)
     })
 
   }
